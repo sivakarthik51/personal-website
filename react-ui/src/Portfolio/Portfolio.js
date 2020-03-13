@@ -1,11 +1,16 @@
 import React from 'react';
 import {Card,Descriptions,Col,Row,Tag, PageHeader} from 'antd';
+import SelectableTags from '../Common/SelectableTags';
 import { GithubOutlined } from '@ant-design/icons';
 
 export default class PortfolioComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            selectedTags: [],
+            allTags:[],
+            filteredCollegeProjects:[],
+            filteredVocationalProjects:[],
             collegeProjects:[
                 {
                     'key':'1',
@@ -69,9 +74,40 @@ export default class PortfolioComponent extends React.Component {
 
             ]
         }
+        
+    }
+    setAllTags = () => {
+        
+        let allTags = [];
+        this.state.collegeProjects.forEach((data) => {
+            allTags.push(...data.tags);
+        })
+        this.state.vocationalProjects.forEach((data) => {
+            allTags.push(...data.tags);
+        })
+        allTags = new Set(allTags);
+        this.setState({allTags:Array.from(allTags)});
+    }
+    getSelectedTags = (selectedTags) => {
+        
+        var filteredCollegeProjects = this.state.collegeProjects.filter((data) => {
+            return selectedTags.some(e => data.tags.includes(e));
+        })
+        var filteredVocationalProjects = this.state.vocationalProjects.filter((data) => {
+            return selectedTags.some(e => data.tags.includes(e));
+        })
+        if (selectedTags.length === 0){
+            this.setState({selectedTags:selectedTags,filteredCollegeProjects:this.state.collegeProjects,filteredVocationalProjects:this.state.vocationalProjects});
+        }
+        else
+            this.setState({selectedTags:selectedTags,filteredCollegeProjects:filteredCollegeProjects,filteredVocationalProjects:filteredVocationalProjects});
+    }
+    componentWillMount(){
+        this.setAllTags();
+        this.setState({filteredCollegeProjects:this.state.collegeProjects,filteredVocationalProjects:this.state.vocationalProjects});
     }
     render(){
-        const collegeProjs = this.state.collegeProjects.map((data,index) =>{             
+        const collegeProjs = this.state.filteredCollegeProjects.map((data,index) =>{             
             return (
                 <Col span={12} key={data.key}> 
                     <Card title={data.title} style={{marginTop:16}}
@@ -94,7 +130,7 @@ export default class PortfolioComponent extends React.Component {
                 {index%2===0?<br /> :null}
                 </Col>
             )});
-            const vocationsProjs = this.state.vocationalProjects.map((data,index) =>{             
+            const vocationsProjs = this.state.filteredVocationalProjects.map((data,index) =>{             
                 return (
                     <Col span={12} key={data.key}> 
                         <Card title={data.title} style={{marginTop:16}}
@@ -119,7 +155,8 @@ export default class PortfolioComponent extends React.Component {
                 )});
         return (
             <>
-               
+                <PageHeader title="Skills" className="site-page-header" subTitle={<SelectableTags tags={this.state.allTags} getSelectedTags={this.getSelectedTags} />} />
+                <br />
                 <PageHeader title="Projects in College" className="site-page-header" subTitle="2014-2018" />
                 
                 <Row gutter={16}>

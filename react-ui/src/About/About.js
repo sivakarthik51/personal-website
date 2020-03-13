@@ -5,6 +5,7 @@ import { BookOutlined } from '@ant-design/icons';
 
 import EducationComponent from './Education';
 import WorkExperienceComponent from './WorkExperience';
+import GoodreadsComponent from './Goodreads';
 const { TabPane } = Tabs;
 
 export default class AboutComponent extends React.Component {
@@ -45,6 +46,11 @@ export default class AboutComponent extends React.Component {
                     <Card title="Work Experience" bordered={true}>
                         <WorkExperienceComponent />
                     </Card>
+                </TabPane>
+                <TabPane tab="Goodreads" key="3">
+                    
+                        <GoodreadsComponent />
+                    
                 </TabPane>
                
             </Tabs>
