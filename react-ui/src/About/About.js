@@ -47,8 +47,6 @@ export default class AboutComponent extends React.Component {
                     <br />
                 <Paragraph>
                     I am a software developer currently employed at Akamai Technologies. I have some web development experience but my interests primarily lie in the area of Machine Learning.
-                    
-                    My interests include anything related to 
                 </Paragraph>
                 
 
