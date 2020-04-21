@@ -34,13 +34,14 @@
 .site-layout-content {
   background: #fff;
   padding: 24px;
-  min-height: 90vh;
+  
 }
-#components-layout-demo-top .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 24px 16px 0;
+.logo {
+  width: 185px;
+  height: 40px;
+  background: #f5f5f5;
+  margin: 12px 30px 10px 0px;
+  padding-left: 5px;
   float: left;
 }
 
@@ -58,40 +59,30 @@
   list-style:none;
 }
 #gr_updates_widget{
-float:left;
-border-radius: 5px;
-background-color:#fff;
-border:solid #683205 10px;
--webkit-box-shadow: 0px 0px 4px 1px #595959,
-inset 0px 0px 0px 1px #7D730B;
--moz-box-shadow: 0px 0px 4px 1px #595959,
-inset 0px 0px 0px 1px #7D730B;
-box-shadow: 0px 0px 4px 1px #595959,
-inset 0px 0px 0px 1px #7D730B;
-padding:15px 0 0px 15px;
-width:290px;
-height:365px;
+  float:left;
+  border-radius: 5px;
+  background-color:#fff;
+  border:solid #683205 10px;
+  -webkit-box-shadow: 0px 0px 4px 1px #595959,
+  inset 0px 0px 0px 1px #7D730B;
+  -moz-box-shadow: 0px 0px 4px 1px #595959,
+  inset 0px 0px 0px 1px #7D730B;
+  box-shadow: 0px 0px 4px 1px #595959,
+  inset 0px 0px 0px 1px #7D730B;
+  padding:15px 0 0px 15px;
+  width:290px;
+  height:365px;
 }
 #gr_footer{
-margin-bottom:0px;
-height:30px;
+  margin-bottom:0px;
+  height:30px;
 }
 #gr_updates_widget p{
-padding:0px;
-margin:0;
-font-size:14px;
+  padding:0px;
+  margin:0;
+  font-size:14px;
 }
 #gr_footer img{
-width:100px;
-float:left;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width:100px;
+  float:left;
 }

@@ -13,12 +13,11 @@ const layout = {
 const ContactForm =  () =>  {
     const [form] = Form.useForm();
     const [, forceUpdate] = useState();
-    let iconLoading = false;
+    const[iconLoading,setIconLoading] = useState(false);
     const validateMessages ={
         required: 'This field is required!',
         types: {
-          email: 'Not a validate email!',
-          number: 'Not a validate number!',
+          email: 'Not a validate email!'
         }
       };
     // To disable submit button at the beginning.
@@ -26,18 +25,28 @@ const ContactForm =  () =>  {
         forceUpdate({});
     }, []);
     const onFinish = values => {
-        iconLoading = true;
-        setTimeout(() => {  console.log(values); }, 2000);
+      setIconLoading(true);
+        setTimeout(() => {  
+          setIconLoading(false);
+          console.log(values); 
+        }, 2000);
        
-         iconLoading = false;
+         
       };
       const enterIconLoading = () => {
-        //iconLoading = true;
+        setIconLoading(true);
       }
     return (
+      <>
+      <PageHeader
+                className="site-page-header"
+                title="Contact Me"
+                subTitle="Expect Delay in Responses"
+            />
+            <br />
         <Form form={form} {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
             <Form.Item
-              name={['user', 'name']}
+              name={['mail', 'name']}
               label="Name"
               rules={[
                 {
@@ -48,11 +57,12 @@ const ContactForm =  () =>  {
               <Input />
             </Form.Item>
             <Form.Item
-              name={['user', 'email']}
+              name={['mail', 'email']}
               label="Email"
               rules={[
                 {
                   type: 'email',
+                  required:true
                 },
               ]}
             >
@@ -60,7 +70,7 @@ const ContactForm =  () =>  {
             </Form.Item>
             
             
-            <Form.Item name={['user', 'message']} label="Message">
+            <Form.Item name={['mail', 'message']} label="Message">
               <Input.TextArea />
             </Form.Item>
             <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }} shouldUpdate>
@@ -75,30 +85,8 @@ const ContactForm =  () =>  {
                 )}
             </Form.Item>
           </Form>
+          </>
     )
 }
 
-export default class ContactComponent extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            
-              iconLoading: false
-        }
-    }
-    
-    render(){
-        
-        return (
-            <>
-            <PageHeader
-                className="site-page-header"
-                title="Contact Me"
-                subTitle="Expect Delay in Responses"
-            />
-            <br />
-            <ContactForm />
-          </>
-        )
-    }
-}
+export default ContactForm;

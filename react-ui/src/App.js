@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import { MemoryRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import AboutComponent from './About/About';
 import PortfolioComponent from './Portfolio/Portfolio';
@@ -20,6 +20,7 @@ function App() {
       <Layout className="layout">
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" >
+       <img style={{height:'31px',marginBottom:'24px'}} src={require('./logo.png')} alt="logo" /> 
         </div>
       <Menu
         theme="dark"
@@ -33,16 +34,13 @@ function App() {
       </Menu>
     </Header>
     <Content className = "site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>Hello</Breadcrumb.Item>
-        <Breadcrumb.Item>There</Breadcrumb.Item>
-        <Breadcrumb.Item>Stranger</Breadcrumb.Item>
-      </Breadcrumb>
+      
       <Element name="scrollable-content" className="element" id="containerElement" style={{
+          marginTop:'30px',
           position: 'relative',
           height: '80vh',
           overflow: 'scroll',
-          marginBottom: '100px'
+          marginBottom: '70px'
         }}>
         <div className="site-layout-content" style={{ padding: 24, minHeight: '80vh' }}>
           <Route path="/" render={() => (
