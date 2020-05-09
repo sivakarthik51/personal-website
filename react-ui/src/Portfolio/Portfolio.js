@@ -1,8 +1,9 @@
 import React from 'react';
-import {Card,Descriptions,Col,Row,Tag, PageHeader} from 'antd';
-import SelectableTags from '../Common/SelectableTags';
+import {Card,Descriptions,Col,Row,Tag, PageHeader,Tabs,Select} from 'antd';
 import { GithubOutlined,LinkOutlined } from '@ant-design/icons';
 
+const { TabPane } = Tabs;
+const { Option } = Select;
 export default class PortfolioComponent extends React.Component {
     constructor(props){
         super(props);
@@ -18,7 +19,7 @@ export default class PortfolioComponent extends React.Component {
                     'title':'NNCPP',
                     'description':'Implementation of a Neural Network in C++',
                     'dates':'2020',
-                    'tags':['C++','Neural Network','Deep Learning'],
+                    'tags':['C++','Neural Network','Deep Learning','Machine Learning'],
                     'githubLink': 'https://github.com/sivakarthik51/NNCPP',
                     'status':'In Progress'
                 },
@@ -40,7 +41,18 @@ export default class PortfolioComponent extends React.Component {
                     'tags':['React','Node'],
                     'githubLink': 'https://github.com/sivakarthik51/personal-website',
                     'status':'In Progress'
+                },
+                {
+                    'key':'4',
+                    'title':'Covid-19 Tracker',
+                    'description':'Tracking the Covid-19 Outbreak',
+                    'dates':'2020',
+                    'tags':['React','Node','antd','highcharts'],
+                    'githubLink': 'https://github.com/sivakarthik51/covid-tracker',
+                    'projectLink':'http://c19track.netlify.app/',
+                    'status':'Complete'
                 }
+
 
             ],
             collegeProjects:[
@@ -183,33 +195,47 @@ export default class PortfolioComponent extends React.Component {
         const collegeProjs = this.getCards(this.state.filteredCollegeProjects);
         const vocationsProjs = this.getCards(this.state.filteredVocationalProjects);
         const miscProjs = this.getCards(this.state.filteredMiscProjects);
+        const filterBySkills = (
+            <Select
+                    mode="multiple"
+                    placeholder="Filter Skills"
+                    onChange={this.getSelectedTags}
+                    style={{ width: '100%' }}
+                >
+                    {this.state.allTags.map((element,i) => {
+                        return <Option key={element} >{element}</Option>
+                    })}
+                </Select>
+        );
     
         return (
             <>
-                <PageHeader title="Filter by Skills" className="site-page-header" subTitle={<SelectableTags tags={this.state.allTags} getSelectedTags={this.getSelectedTags} />} />
-                <br />
+            {filterBySkills}
+                
+                <br /> <br />
+                <Tabs tabPosition="left">
+                    <TabPane tab="Miscellaneous Projects" key="1">
+                        <PageHeader title="Miscellaneous Projects" className="site-page-header" subTitle="2020" />
 
-                <PageHeader title="Miscellaneous Projects" className="site-page-header" subTitle="2020" />
-                
-                <Row gutter={16}>
-                    {miscProjs}
-                </Row>
+                        <Row gutter={16}>
+                            {miscProjs}
+                        </Row>
+                    </TabPane>
+                    <TabPane tab="Vocational Projects" key="2">
+                        <PageHeader title="Vocational Projects" className="site-page-header" subTitle="2018-2020" />
 
-                <PageHeader title="Vocational Projects" className="site-page-header" subTitle="2018-2020" />
-                
-                <Row gutter={16}>
-                    {vocationsProjs}
-                </Row>
+                        <Row gutter={16}>
+                            {vocationsProjs}
+                        </Row>
+                    </TabPane>
+                    <TabPane tab="College Projects" key="3">
+                        <PageHeader title="Projects in College" className="site-page-header" subTitle="2014-2018" />
 
-
-                <PageHeader title="Projects in College" className="site-page-header" subTitle="2014-2018" />
-                
-                <Row gutter={16}>
-                    {collegeProjs}
-                </Row>
-                
-                
-                
+                        <Row gutter={16}>
+                            {collegeProjs}
+                        </Row>
+                    </TabPane>
+                </Tabs>
             </>
         )
     }
