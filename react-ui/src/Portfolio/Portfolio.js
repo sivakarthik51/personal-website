@@ -1,9 +1,10 @@
 import React from 'react';
-import {Card,Descriptions,Col,Row,Tag, PageHeader,Tabs,Select} from 'antd';
+import {Card,Avatar,Col,Row,Badge, PageHeader,Tabs,Select , Tooltip} from 'antd';
 import { GithubOutlined,LinkOutlined } from '@ant-design/icons';
 
 const { TabPane } = Tabs;
 const { Option } = Select;
+const { Meta } = Card;
 export default class PortfolioComponent extends React.Component {
     constructor(props){
         super(props);
@@ -17,21 +18,23 @@ export default class PortfolioComponent extends React.Component {
                 {
                     'key':'1',
                     'title':'NNCPP',
-                    'description':'Implementation of a Neural Network in C++',
+                    'description':' This is a basic implementation of a Neural Network in C++. A feedforward network framework.',
                     'dates':'2020',
                     'tags':['C++','Neural Network','Deep Learning','Machine Learning'],
                     'githubLink': 'https://github.com/sivakarthik51/NNCPP',
-                    'status':'In Progress'
+                    'active':false,
+                    'avatarText':'C++'
                 },
                 {
                     'key':'2',
                     'title':'Chat Application',
-                    'description':'Implementaion of a Simple Chat Application in React',
+                    'description':'Implementaion of a Simple Chat Application using socket.io, node and React. There is support for chat rooms.',
                     'dates':'2020',
                     'tags':['Node','React','socket-io'],
                     'githubLink': 'https://github.com/sivakarthik51/chat-app',
                     'projectLink':'https://antd-chat-app.netlify.app/',
-                    'status':'In Progress'
+                    'active':false,
+                    'avatarText':'JS'
                 },
                 {
                     'key':'3',
@@ -40,17 +43,19 @@ export default class PortfolioComponent extends React.Component {
                     'dates':'2020',
                     'tags':['React','Node'],
                     'githubLink': 'https://github.com/sivakarthik51/personal-website',
-                    'status':'In Progress'
+                    'active':true,
+                    'avatarText':'JS'
                 },
                 {
                     'key':'4',
                     'title':'Covid-19 Tracker',
-                    'description':'Tracking the Covid-19 Outbreak',
+                    'description':'Tracking the Covid-19 Outbreak. This includes the statistics for different countries with both a graph and map view.',
                     'dates':'2020',
                     'tags':['React','Node','antd','highcharts'],
                     'githubLink': 'https://github.com/sivakarthik51/covid-tracker',
                     'projectLink':'http://c19track.netlify.app/',
-                    'status':'Complete'
+                    'active':false,
+                    'avatarText':'JS'
                 }
 
 
@@ -59,10 +64,11 @@ export default class PortfolioComponent extends React.Component {
                 {
                     'key':'1',
                     'title':'Theatre Management',
-                    'description':'Theatre Management system for admins and regular users',
+                    'description':'Theatre Management system for Owners and Customers. Theatre owners can list their outlets and movies. Customers can search for movies and book tickets.',
                     'dates':'2016',
                     'tags':['Python','Django','DBMS','Database', 'Web Development'],
-                    'githubLink': 'https://github.com/sivakarthik51/TheatreManagement'
+                    'githubLink': 'https://github.com/sivakarthik51/TheatreManagement',
+                    'avatarText':'Py'
                 },
                 {
                     'key':'2',
@@ -70,7 +76,8 @@ export default class PortfolioComponent extends React.Component {
                     'description':'Implementing Load Balancing for SDN using floodlight controller',
                     'dates':'2018',
                     'tags':['Networks','Java','Floodlight','SDN'],
-                    'githubLink': ''
+                    'githubLink': '',
+                    'avatarText':'Java'
                 },
                 {
                     'key':'3',
@@ -78,7 +85,8 @@ export default class PortfolioComponent extends React.Component {
                     'description':'SIP based Local Call Routing mechanism',
                     'dates':'2015-18',
                     'tags':['SIP','Networks','Python'],
-                    'githubLink': ''
+                    'githubLink': '',
+                    'avatarText':'Py'
                 },
                 {
                     'key':'4',
@@ -86,7 +94,8 @@ export default class PortfolioComponent extends React.Component {
                     'description':'Chatbot using RNN with LSTM units trained on Movie Dialogues',
                     'dates':'2017',
                     'tags':['Machine Learning','Deep Learning','Python'],
-                    'githubLink': ''
+                    'githubLink': '',
+                    'avatarText':'Py'
                 }
 
             ],
@@ -94,19 +103,21 @@ export default class PortfolioComponent extends React.Component {
                 {
                     'key':'1',
                     'title':'PPRM',
-                    'description':'Project Portfolio and Resource Managment',
+                    'description':'Project Portfolio and Resource Managment. This project aims to provide a tool for Management to track resource usage and allocate work accordingly.',
                     'dates':'2016',
                     'tags':['Javascript','Angular','Salesforce', 'Web Development'],
-                    'githubLink': ''
+                    'githubLink': '',
+                    'avatarText':'JS'
                 },
                 {
                     'key':'2',
                     'title':'Enterprise Search',
-                    'description':'Created a Search Platform indexing all repositories in the organization',
+                    'description':'Created a Search Platform indexing all repositories in the organization. Worked on setting up a Machine Learning model to classify documents.',
                     'dates':'2019',
-                    'tags':['C#','Python','Search'],
+                    'tags':['C#','Python','Search', 'Machine Learning'],
                     'githubLink': '',
-                    'status':'Running'
+                    'active':true,
+                    'avatarText':'C#'
                 },
                 {
                     'key':'3',
@@ -114,7 +125,8 @@ export default class PortfolioComponent extends React.Component {
                     'description':'Developed APIs for Salesforce Objects',
                     'dates':'2019',
                     'tags':['Mulesoft','Salesforce'],
-                    'githubLink': ''
+                    'githubLink': '',
+                    'avatarText':'API'
                 }
 
             ]
@@ -169,21 +181,26 @@ export default class PortfolioComponent extends React.Component {
     {
         var crds = projects.map((data,index) =>{             
             return (
-                <Col span={12} key={data.key}> 
-                    <Card title={data.title} style={{marginTop:16}}
+                <Col xs={24} sm={24} md={24} lg={12} xl={12} key={data.key}> 
+                    <Card  style={{marginTop:16}}
                     actions={this.getActions(data)}
-                    extra={data.status?<Tag color="#108ee9">{data.status}</Tag>:null}>
-                        <Descriptions bordered>
-                       
-                            <Descriptions.Item label="Description">{data.description}</Descriptions.Item>
-                            <Descriptions.Item label="Dates">{data.dates}</Descriptions.Item>
-                            <br />
-                            <Descriptions.Item label="Tags">
-                                {data.tags.map((tag,inx) => {
-                                    return (<Tag key={index+'-'+inx}>{tag}</Tag>);
-                                })}
-                            </Descriptions.Item>
-                        </Descriptions>
+                    >
+                        
+                        <Meta
+                            avatar={
+                            <Avatar>{data.avatarText}</Avatar>
+                            }
+                            title={
+                                <>
+                                {data.title}
+                                &nbsp; 
+                                <Tooltip title="Active Project">
+                                    <Badge status={data.active?"processing":null} />
+                                </Tooltip>
+                                </>
+                                }
+                            description={data.description}
+                        />
                     </Card>
                 
                 {index%2===0?<br /> :null}
@@ -192,6 +209,7 @@ export default class PortfolioComponent extends React.Component {
             return crds;
     }
     render(){
+        
         const collegeProjs = this.getCards(this.state.filteredCollegeProjects);
         const vocationsProjs = this.getCards(this.state.filteredVocationalProjects);
         const miscProjs = this.getCards(this.state.filteredMiscProjects);
@@ -213,7 +231,7 @@ export default class PortfolioComponent extends React.Component {
             {filterBySkills}
                 
                 <br /> <br />
-                <Tabs tabPosition="left">
+                <Tabs tabPosition="top">
                     <TabPane tab="Miscellaneous Projects" key="1">
                         <PageHeader title="Miscellaneous Projects" className="site-page-header" subTitle="2020" />
 

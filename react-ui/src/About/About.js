@@ -14,12 +14,10 @@ export default class AboutComponent extends React.Component {
     render(){
         return (
             <>
-            
-            
-          <Row gutter={16}>
-          <Col>
+          <Row >
+          <Col xs={24} sm={24} md={24} lg={10} xl={10} style={{horizontalAlign:'center'}}>
                 <Card
-                    style={{ width: 300 }}
+                    style={{ width: '80%' }}
                     cover={
                     <img
                         alt="Siva Karthik"
@@ -33,10 +31,10 @@ export default class AboutComponent extends React.Component {
                     ]}
                     >
                 </Card>
-                </Col>
+           </Col>
 
               
-            <Col span={16} style={{paddingLeft:'24px'}}>
+            <Col xs={24} sm={24} md={24} lg={14} xl={14} >
             <Tabs defaultActiveKey="1" >
                 <TabPane tab="About Me" key="1">
                 <PageHeader

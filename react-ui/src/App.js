@@ -5,13 +5,13 @@ import { MemoryRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 import AboutComponent from './About/About';
 import PortfolioComponent from './Portfolio/Portfolio';
 import ContactComponent from './Contact/Contact';
-import Scroll from 'react-scroll';
 
-import { MailOutlined,SmileOutlined,CodeOutlined } from '@ant-design/icons';
+import { MailOutlined,SmileOutlined,CodeOutlined, MenuOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
 
-var Element = Scroll.Element;
+const {SubMenu} = Menu;
+
 
 
 function App() {
@@ -20,29 +20,28 @@ function App() {
       <Layout className="layout">
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" >
-       <img style={{height:'31px',marginBottom:'24px'}} src={require('./logo.png')} alt="logo" /> 
-        </div>
+        <img style={{height:'31px',marginBottom:'24px'}} src={require('./logo.png')} alt="logo" /> 
+      </div>
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
         style={{ lineHeight: '64px' }}
       >
-        <Menu.Item key="1"> <SmileOutlined />About<Link to='/about' /></Menu.Item>
-        <Menu.Item key="2"><CodeOutlined />Portfolio<Link to='/portfolio' /></Menu.Item>
-        <Menu.Item key="3"><MailOutlined />Contact<Link to='/contact' /></Menu.Item>
+          <Menu.Item key="1" className="menuExpanded" icon={<SmileOutlined />} >About<Link to='/about' /></Menu.Item>
+          <Menu.Item key="2" className="menuExpanded" icon={<CodeOutlined />}>Portfolio<Link to='/portfolio' /></Menu.Item>
+          <Menu.Item key="3" className="menuExpanded" icon={<MailOutlined />}>Contact<Link to='/contact' /></Menu.Item>
+
+        <SubMenu icon={<MenuOutlined />} className="subMenu">
+          <Menu.Item key="1" icon={<SmileOutlined />} >About<Link to='/about' /></Menu.Item>
+          <Menu.Item key="2" icon={<CodeOutlined />}>Portfolio<Link to='/portfolio' /></Menu.Item>
+          <Menu.Item key="3" icont={<MailOutlined />}>Contact<Link to='/contact' /></Menu.Item>
+        </SubMenu>
       </Menu>
     </Header>
-    <Content className = "site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+    <Content className = "site-layout" style={{ padding: '0 20px', marginTop: 64 }}>
       
-      <Element name="scrollable-content" className="element" id="containerElement" style={{
-          marginTop:'30px',
-          position: 'relative',
-          height: '80vh',
-          overflow: 'scroll',
-          marginBottom: '70px'
-        }}>
-        <div className="site-layout-content" style={{ padding: 24, minHeight: '80vh' }}>
+        <div className="site-layout-content" style={{ padding: 24 }}>
           <Route path="/" render={() => (
                       <Redirect to="/about" />
                     )} />
@@ -50,10 +49,9 @@ function App() {
           <Route path = "/portfolio" component = {PortfolioComponent} />
           <Route path = "/contact" component = {ContactComponent} />
         </div>
-      </Element>
       
     </Content>
-    <Footer style={{ textAlign: 'center',position:'absolute',top:'100vh',width:'100%' }}>Siva Karthik ©{(new Date().getFullYear())} </Footer>
+    <Footer className="site-footer" style={{ textAlign: 'center',position:'relative',top:'100%',width:'100%' }}>Siva Karthik ©{(new Date().getFullYear())} </Footer>
   </Layout>
   </Router>
     

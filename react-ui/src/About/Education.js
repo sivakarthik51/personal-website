@@ -48,7 +48,7 @@ export default class EductionComponent extends React.Component{
 
     render() {
         return (
-            <Table dataSource={this.state.dataSource} columns={this.state.columns} pagination={false} />
+            <Table dataSource={this.state.dataSource} columns={this.state.columns} pagination={false} scroll={{x:window.innerHeight}} />
         )
     }
 }

@@ -10,12 +10,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -31,9 +25,23 @@
   color: #61dafb;
 }
 
+.subMenu {
+  display: none !important;
+}
+
+@media only screen and (max-width: 700px) {
+  .menuExpanded {
+    display: none !important;
+  }
+  .subMenu {
+    float: right !important;
+    display: block !important;
+  }
+}
+
 .site-layout-content {
   background: #fff;
-  padding: 24px;
+  padding: 5px;
   
 }
 .logo {
@@ -53,6 +61,10 @@
   border: 1px solid rgb(235, 237, 240);
 }
 
+.site-footer {
+  background-color: #001529;
+  color:white
+}
 #customize-list{
   float:left;
   margin-left:20px;
