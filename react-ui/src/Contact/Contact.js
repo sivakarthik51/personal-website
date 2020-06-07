@@ -73,7 +73,7 @@ const ContactForm =  () =>  {
             <Form.Item name={['mail', 'message']} label="Message">
               <Input.TextArea />
             </Form.Item>
-            <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }} shouldUpdate>
+            <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 4 }} shouldUpdate>
                 {() => (
                 <Button type="primary" htmlType="submit" icon={<SendOutlined />} loading={iconLoading}
                  onClick={enterIconLoading} disabled={
