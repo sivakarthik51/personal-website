@@ -17,7 +17,7 @@ export default class AboutComponent extends React.Component {
           <Row >
           <Col xs={24} sm={24} md={24} lg={10} xl={10} style={{horizontalAlign:'center'}}>
                 <Card
-                    style={{ width: '80%' }}
+                    className="photo-card"
                     cover={
                     <img
                         alt="Siva Karthik"
