@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Layout className="layout">
-    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' , padding:'0 20px' }}>
       <div className="logo" >
         <img style={{height:'31px',marginBottom:'24px'}} src={require('./logo.png')} alt="logo" /> 
       </div>
