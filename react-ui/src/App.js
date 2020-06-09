@@ -39,7 +39,7 @@ function App() {
         </SubMenu>
       </Menu>
     </Header>
-    <Content className = "site-layout" style={{ padding: '0 20px', marginTop: 64 }}>
+    <Content className = "site-layout" style={{ padding: '0 20px', marginTop: 64, minHeight:'90vh' }}>
       
         <div className="site-layout-content" style={{ padding: 24 }}>
           <Route path="/" render={() => (

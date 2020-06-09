@@ -41,7 +41,7 @@ export default class AboutComponent extends React.Component {
                     className="site-page-header"
                     
                     title="Siva Karthik R"
-                    subTitle="Avid Reader, Technology Enthusiast"/>
+                    subTitle={<span className="sub-title">Avid Reader, Technology Enthusiast</span>}/>
                     <br />
                 <Paragraph>
                     I am a software developer currently employed at Akamai Technologies. I have some web development experience but my interests primarily lie in the area of Machine Learning.

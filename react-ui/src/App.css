@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.css';
 
-
+.layout{
+  display: flex;
+  flex-direction: column;
+}
 .App {
   text-align: center;
 }
@@ -43,6 +46,9 @@
   }
   .photo-card{
     width: 100%;
+  }
+  .sub-title{
+    display:none !important;
   }
 }
 

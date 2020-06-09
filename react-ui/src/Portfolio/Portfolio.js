@@ -233,21 +233,24 @@ export default class PortfolioComponent extends React.Component {
                 <br /> <br />
                 <Tabs tabPosition="top">
                     <TabPane tab="Miscellaneous Projects" key="1">
-                        <PageHeader title="Miscellaneous Projects" className="site-page-header" subTitle="2020" />
+                        <PageHeader title="Miscellaneous Projects" className="site-page-header" 
+                            subTitle={<span className="sub-title">2020</span>} />
 
                         <Row gutter={16}>
                             {miscProjs}
                         </Row>
                     </TabPane>
                     <TabPane tab="Vocational Projects" key="2">
-                        <PageHeader title="Vocational Projects" className="site-page-header" subTitle="2018-2020" />
+                        <PageHeader title="Vocational Projects" className="site-page-header" 
+                            subTitle={<span className="sub-title">2018-2020</span>} />
 
                         <Row gutter={16}>
                             {vocationsProjs}
                         </Row>
                     </TabPane>
                     <TabPane tab="College Projects" key="3">
-                        <PageHeader title="Projects in College" className="site-page-header" subTitle="2014-2018" />
+                        <PageHeader title="Projects in College" className="site-page-header" 
+                            subTitle={<span className="sub-title">2014-2018</span>} />
 
                         <Row gutter={16}>
                             {collegeProjs}
