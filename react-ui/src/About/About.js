@@ -14,8 +14,9 @@ export default class AboutComponent extends React.Component {
     render(){
         return (
             <>
-          <Row >
-          <Col xs={24} sm={24} md={24} lg={10} xl={10} style={{horizontalAlign:'center'}}>
+          <Row justify="center">
+          
+          <Col xs={24} sm={24} md={24} lg={6} xl={6} style={{horizontalAlign:'center'}}>
                 <Card
                     className="photo-card"
                     cover={
@@ -33,8 +34,8 @@ export default class AboutComponent extends React.Component {
                 </Card>
            </Col>
 
-              
-            <Col xs={24} sm={24} md={24} lg={14} xl={14} >
+              &nbsp;&nbsp;&nbsp;
+            <Col xs={24} sm={24} md={24} lg={16} xl={16} style={{horizontalAlign:'center'}} >
             <Tabs defaultActiveKey="1" >
                 <TabPane tab="About Me" key="1">
                 <PageHeader
@@ -44,7 +45,7 @@ export default class AboutComponent extends React.Component {
                     subTitle={<span className="sub-title">Avid Reader, Technology Enthusiast</span>}/>
                     <br />
                 <Paragraph>
-                    I am a software developer currently employed at Akamai Technologies. I have some web development experience but my interests primarily lie in the area of Machine Learning.
+                    I am a software developer currently employed at Akamai Technologies. I build web applications out of topics that I learn in order to understand it better and it has become a hobby. My interests primarily lie in the design and optimization of alogrithms for application in Networks and Machine Learning.
                 </Paragraph>
                 
 
@@ -66,7 +67,7 @@ export default class AboutComponent extends React.Component {
             </Tabs>
                
                 </Col>
-                                
+                     
                 </Row>
           </>
         )

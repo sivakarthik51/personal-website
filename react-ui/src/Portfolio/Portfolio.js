@@ -56,6 +56,39 @@ export default class PortfolioComponent extends React.Component {
                     'projectLink':'http://c19track.netlify.app/',
                     'active':false,
                     'avatarText':'JS'
+                },
+                {
+                    'key':'5',
+                    'title':'OCR Application',
+                    'description':'Built an web application that can extract text from images. The extracted text can be edited and saved temporarily or copied. All file uploads are local and does not go through a server. The image processing happens on the browser using Web Assembly.',
+                    'dates':'2020',
+                    'tags':['React','tesseract.js','antd'],
+                    'githubLink': 'https://github.com/sivakarthik51/ocr-tesseract',
+                    'projectLink':'https://ocr-app.netlify.app/',
+                    'active':false,
+                    'avatarText':'JS'
+                },
+                {
+                    'key':'6',
+                    'title':'E-Commerce App',
+                    'description':'Built an e-commerce application to help small business sellers market directly to customers.The backend is powered by CommerceJS and Stripe (for payment).',
+                    'dates':'2020',
+                    'tags':['React','commercejs','stripe','antd'],
+                    'githubLink': 'https://github.com/sivakarthik51/market-place',
+                    'projectLink':'https://sellersmarket.netlify.app/',
+                    'active':false,
+                    'avatarText':'JS'
+                },
+                {
+                    'key':'7',
+                    'title':'Voice Controlled News/Stock App',
+                    'description':'Built a voice-controlled app that can get the news based on search terms and stock overview of different companies.',
+                    'dates':'2020',
+                    'tags':['React','alan.ai','antd','material-ui'],
+                    'githubLink': 'https://github.com/sivakarthik51/news-application',
+                    'projectLink':'https://news-hub.netlify.app/',
+                    'active':false,
+                    'avatarText':'JS'
                 }
 
 
