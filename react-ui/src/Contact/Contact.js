@@ -24,15 +24,36 @@ const ContactForm =  () =>  {
     useEffect(() => {
         forceUpdate({});
     }, []);
+    const encode = (data) => {
+      return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+    }
     const onFinish = values => {
       setIconLoading(true);
-        setTimeout(() => {  
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...values })
+      })
+        .then(() => {
           setIconLoading(false);
-          console.log(values); 
-        }, 2000);
+        })
+        .catch(error => {
+          console.log(error);
+          setIconLoading(false);
+        });
+
+      //e.preventDefault();
+    };
+        // setTimeout(() => {  
+        //   setIconLoading(false);
+        //   console.log(values); 
+        // }, 2000);
        
          
-      };
+      
       const enterIconLoading = () => {
         setIconLoading(true);
       }
