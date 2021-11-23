@@ -45,6 +45,7 @@ const ContactForm =  () =>  {
             />
             <br />
         <Form form={form} {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+        <input type="hidden" name="form-name" value="nest-messages" />
             <Form.Item
               name={['mail', 'name']}
               label="Name"

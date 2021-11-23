@@ -60,7 +60,7 @@ export default class WorkExperienceComponent extends React.Component{
                 {
                     key: '3',
                     organization: 'Akamai Technologies',
-                    date: '2018-Present',
+                    date: '2018-2021',
                     designation:'Software Engineer II',
                     tags: ['Search', 'Web Development','Machine Learning']
                 }

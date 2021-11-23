@@ -9,7 +9,7 @@ import WorkExperienceComponent from './WorkExperience';
 import GoodreadsComponent from './Goodreads';
 const { TabPane } = Tabs;
 const { Paragraph } = Typography;
-
+  
 export default class AboutComponent extends React.Component {
     render(){
         return (
@@ -41,11 +41,16 @@ export default class AboutComponent extends React.Component {
                 <PageHeader
                     className="site-page-header"
                     
-                    title="Siva Karthik R"
+                    title="Siva Karthik Ramesh"
                     subTitle={<span className="sub-title">Avid Reader, Technology Enthusiast</span>}/>
                     <br />
-                <Paragraph>
-                    I am a software developer currently employed at Akamai Technologies. I build web applications out of topics that I learn in order to understand it better and it has become a hobby. My interests primarily lie in the design and optimization of alogrithms for application in Networks and Machine Learning.
+                <Paragraph justify>
+                    <ul>
+                        <li>Currently a Master's student at Georgia Institute of Technology majoring in Computer Science (specialization in Machine Learning).</li>
+                        <li><strong>Looking for Summer'22 Internships. Interested in Software Engineering and Machine Learning Engineering/Infrastructure Development roles.</strong></li>
+                        <li>Previously worked at Akamai Technologies, Bangalore where I built end-to-end Machine Learning Pipelines for Document Classification</li>
+                        <li>I build web applications out of topics that I learn in order to understand it better and it has become a hobby. [See Portfolio]</li>
+                    </ul>
                 </Paragraph>
                 
 

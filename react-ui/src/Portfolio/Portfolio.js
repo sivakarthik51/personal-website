@@ -145,17 +145,25 @@ export default class PortfolioComponent extends React.Component {
                 {
                     'key':'2',
                     'title':'Enterprise Search',
-                    'description':'Created a Search Platform indexing all repositories in the organization. Worked on setting up a Machine Learning model to classify documents.',
+                    'description':'Created a Search Platform indexing all repositories in the organization. Worked on setting up an end-to-end Machine Learning pipeline to classify documents and improve the relevancy of Search.',
                     'dates':'2019',
                     'tags':['C#','Python','Search', 'Machine Learning'],
                     'githubLink': '',
-                    'active':true,
                     'avatarText':'C#'
                 },
                 {
                     'key':'3',
                     'title':'API Development',
-                    'description':'Developed APIs for Salesforce Objects',
+                    'description':'Developed APIs for Salesforce Objects to facilitate Product Catalog and manage launches.',
+                    'dates':'2019',
+                    'tags':['Mulesoft','Salesforce'],
+                    'githubLink': '',
+                    'avatarText':'API'
+                },
+                {
+                    'key':'4',
+                    'title':'Edge Cache Purge',
+                    'description':'Designed and setup an automated purge mechanism along with a generic API to clear cache in over 240,000 Edge systems worldwide for the main Akamai Site.',
                     'dates':'2019',
                     'tags':['Mulesoft','Salesforce'],
                     'githubLink': '',
@@ -275,7 +283,7 @@ export default class PortfolioComponent extends React.Component {
                     </TabPane>
                     <TabPane tab="Vocational Projects" key="2">
                         <PageHeader title="Vocational Projects" className="site-page-header" 
-                            subTitle={<span className="sub-title">2018-2020</span>} />
+                            subTitle={<span className="sub-title">2018-2021</span>} />
 
                         <Row gutter={16}>
                             {vocationsProjs}
