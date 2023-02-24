@@ -44,15 +44,16 @@ export default class AboutComponent extends React.Component {
                     title="Siva Karthik Ramesh"
                     subTitle={<span className="sub-title">Avid Reader, Technology Enthusiast</span>}/>
                     <br />
+                    <Card>
                 <Paragraph justify>
                     <ul>
                         <li>Currently a Master's student at Georgia Institute of Technology majoring in Computer Science (specialization in Machine Learning).</li>
-                        <li><strong>Looking for Summer'22 Internships. Interested in Software Engineering and Machine Learning Engineering/Infrastructure Development roles.</strong></li>
-                        <li>Previously worked at Akamai Technologies, Bangalore where I built end-to-end Machine Learning Pipelines for Document Classification</li>
+                        <li><strong>Looking for Full Time Software Engineer/Senior Software Engineer or Full Stack Engineer Opportunities.</strong></li>
+                        <li>I have 4 years of work experience spanning across multiple domains.</li>
                         <li>I build web applications out of topics that I learn in order to understand it better and it has become a hobby. [See Portfolio]</li>
                     </ul>
                 </Paragraph>
-                
+                </Card>
 
                 </TabPane>
                 <TabPane tab="Education" key="2">

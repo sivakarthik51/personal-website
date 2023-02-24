@@ -62,7 +62,7 @@ const ContactForm =  () =>  {
       <PageHeader
                 className="site-page-header"
                 title="Contact Me"
-                subTitle={<span className="sub-title">Expect Delay in Responses</span>}
+                subTitle={<span className="sub-title">I usually respond quickly</span>}
             />
             <br />
         <Form form={form} {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>

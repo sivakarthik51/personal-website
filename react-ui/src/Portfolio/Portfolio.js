@@ -129,6 +129,23 @@ export default class PortfolioComponent extends React.Component {
                     'tags':['Machine Learning','Deep Learning','Python'],
                     'githubLink': '',
                     'avatarText':'Py'
+                },
+                {
+                    'key':'5',
+                    'title': 'IPRCE',
+                    'description':'Developed an NLP pipeline using Python to analyze social media data in order to predict anxiety and stress levels.',
+                    'dates': '2022',
+                    'avatarText':'Py',
+                    'tags': ['Machine Learning','NLP', 'Python','Pandas','Numpy']
+                },
+                {
+                    'key':'6',
+                    'title': 'Data Contribution Portal',
+                    'description':'Building a portal to collect data for research studies in a secure manner.Building',
+                    'dates': '2023',
+                    'active': true,
+                    'avatarText':'Py',
+                    'tags': ['Flask','Nginx', 'Python','PostgresSQL']
                 }
 
             ],
@@ -168,6 +185,24 @@ export default class PortfolioComponent extends React.Component {
                     'tags':['Mulesoft','Salesforce'],
                     'githubLink': '',
                     'avatarText':'API'
+                },
+                {
+                    'key':'5',
+                    'title':'Robotics Simulation Framework',
+                    'description':'Built a Simulation tool to test Robot code before it is deployed to a physical workcell.',
+                    'dates':'2022',
+                    'tags':['Robotics','Python'],
+                    'githubLink': '',
+                    'avatarText':'Py'
+                },
+                {
+                    'key':'6',
+                    'title':'Federated Query Engine',
+                    'description':'Developed a Federated Query Engine to allow access to multiple data sources using the same code base.',
+                    'dates':'2022',
+                    'tags':['Python'],
+                    'githubLink': '',
+                    'avatarText':'Py'
                 }
 
             ]

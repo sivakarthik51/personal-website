@@ -27,7 +27,7 @@ export default class EductionComponent extends React.Component{
                   key: '1',
                   institution: 'Georgia Institute of Technology',
                   date: '2021-2023',
-                  grade: 'N/A',
+                  grade: '4.0',
               },
                 {
                   key: '2',
