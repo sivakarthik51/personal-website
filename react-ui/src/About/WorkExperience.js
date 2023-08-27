@@ -69,21 +69,28 @@ export default class WorkExperienceComponent extends React.Component{
                   organization: 'Optum Labs | UnitedHealth Group',
                   date:'2022',
                   designation: 'Software Engineer Intern',
-                  tags: ['Python']
+                  tags: ['Backend']
                 },
                 {
                   key:'5',
                   organization: 'Amazon',
                   date:'2022',
                   designation: 'Software Engineer Intern',
-                  tags: ['Python']
+                  tags: ['Backend']
                 },
                 {
                   key:'6',
                   organization: 'Georgia Institute of Technology',
                   date:'2022-2023',
                   designation: 'Graduate Research Assistant',
-                  tags: ['Python']
+                  tags: ['Backend']
+                },
+                {
+                  key:'7',
+                  organization: 'Arch',
+                  date:'2023- Present',
+                  designation: 'Software Engineer',
+                  tags: ['Full Stack']
                 },
               ]
 
